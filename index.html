@@ -14,6 +14,7 @@
       <a href="pages/lua-obfuscator.html">Lua Obfuscator</a> |
       <a href="pages/advanced.html">Luau & Advanced</a> |
       <a href="projects/">Projects</a> |
+      <a href="pages/obfuscate.html">Obfuscate (Server)</a> |
       <a href="README.md">README</a>
     </nav>
   </header>
@@ -27,16 +28,16 @@
     <section>
       <h2>Quick Links</h2>
       <ul>
-        <li><a href="lua/obfuscator.lua">lua/obfuscator.lua</a> — lightweight Prometheus-inspired obfuscator (CLI)</li>
+        <li><a href="pages/obfuscate.html">Obfuscate (Server)</a> — web UI for server-side obfuscation (requires server deployment and token)</li>
         <li><a href="pages/lua-obfuscator.html">Documentation & options</a></li>
-        <li><a href="lua/examples/sample.lua">Example Lua file</a></li>
+        <li><a href="lua/examples/sample.lua">Example Lua file</a> (for local CLI use)</li>
         <li><a href="projects/">Projects</a> — curated project pages and links</li>
       </ul>
     </section>
 
     <section>
       <h2>For technical users</h2>
-      <p>There is a small bash wrapper at <code>bin/obfuscate.sh</code> you can use in CI or locally.</p>
+      <p>There is a small bash wrapper at <code>bin/obfuscate.sh</code> you can use in CI or locally. If you want hosted obfuscation, deploy the server in <code>server/</code> to a private environment and set <code>OBFUSCATE_TOKEN</code>.</p>
     </section>
   </main>
 

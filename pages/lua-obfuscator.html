@@ -11,27 +11,21 @@
     <h1>Lua Obfuscator — Documentation</h1>
     <nav>
       <a href="../index.html">Home</a> |
-      <a href="lua/obfuscator.lua">Obfuscator</a>
+      <a href="../pages/obfuscate.html">Obfuscate (Server)</a>
     </nav>
   </header>
 
   <main>
     <section>
       <h2>Usage</h2>
-      <pre><code>lua lua/obfuscator.lua --input in.lua --output out.lua --mode=lua --mangle-local --encrypt-strings --encode-numbers</code></pre>
-      <p>Flags:</p>
-      <ul>
-        <li><code>--mode=lua|luau</code> — choose the target language (default: lua). Use <code>luau</code> for more conservative transforms.</li>
-        <li><code>--mangle-local</code> — mangle local variable names.</li>
-        <li><code>--encrypt-strings</code> — replace string literals with a small runtime decoder.</li>
-        <li><code>--encode-numbers</code> — split numeric literals into expressions.</li>
-      </ul>
-    </section>
+      <p>The repo includes both a browser demo (client-side) and a server API for hosted obfuscation. The hosted API is intended to run in a private deployment where the obfuscator implementation is not exposed to the public.
+      </p>
 
-    <section>
-      <h2>Examples</h2>
-      <p>Obfuscate a file (Luau-safe mode):</p>
-      <pre><code>lua lua/obfuscator.lua --input lua/examples/sample.lua --output sample.obf.lua --mode=luau --mangle-local</code></pre>
+      <pre><code>lua lua/obfuscator.lua --input in.lua --output out.lua --mode=lua --mangle-local --encrypt-strings --encode-numbers</code></pre>
+
+      <p>To use the server API, open the <a href="../pages/obfuscate.html">Obfuscate (Server)</a> page and provide a valid bearer token. The server endpoints and deployment details are in <code>server/</code>.</p>
+
+      <p>To keep your obfuscator private, host the <code>server/</code> folder in a private repository or private deployment and do not expose the sources publicly. You can compile the obfuscation core to WASM and only deploy the WASM binary to the server for additional protection (see <code>server/wasm/README.md</code>).</p>
     </section>
   </main>
 

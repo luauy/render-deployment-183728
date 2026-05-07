@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obfuscate — Web API</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Obfuscate (Server)</h1>
+    <nav>
+      <a href="../index.html">Home</a> |
+      <a href="../projects/">Projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Obfuscate via API</h2>
+      <p>This form sends your code to the obfuscation API. The server must be running and reachable at <code>/api/obfuscate</code>. The API requires a bearer token. If you deploy the server, set <code>OBFUSCATE_TOKEN</code> in your environment.</p>
+
+      <label for="token">Bearer token:</label><br>
+      <input id="token" placeholder="Enter token" style="width: 60%" />
+
+      <textarea id="code" rows="12" style="width:100%" placeholder="Paste Lua code here"></textarea>
+      <div style="margin-top: 0.5rem">
+        <label><input type="checkbox" id="mangle" /> Mangle locals</label>
+        <label style="margin-left:1rem"><input type="checkbox" id="encrypt" /> Encrypt strings</label>
+        <label style="margin-left:1rem"><input type="checkbox" id="encode" /> Encode numbers</label>
+      </div>
+      <button id="run">Run (send to server)</button>
+
+      <h3>Result</h3>
+      <pre id="out" style="background:#0f172a10;padding:1rem;border-radius:6px; white-space:pre-wrap"></pre>
+    </section>
+  </main>
+
+  <script src="/pages/obfuscate.js"></script>
+</body>
+</html>
