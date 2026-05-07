@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  registry:
+    image: registry:2
+    restart: always
+    environment:
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry
+    volumes:
+      - ./data:/var/lib/registry
+    expose:
+      - 5000
+
+  nginx:
+    image: nginx:stable-alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+      - ./htpasswd:/etc/nginx/htpasswd:ro
+    depends_on:
+      - registry
