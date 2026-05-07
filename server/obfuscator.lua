@@ -1,9 +1,5 @@
--- server/obfuscator.lua
--- Server-side copy of the lightweight Prometheus-inspired obfuscator.
--- This file is moved out of the static-serving paths so it isn't trivially downloadable from the site UI.
--- NOTE: for secrecy you should keep this server folder private or host it in a private repository / deployment.
-
--- (This is the same conservative obfuscator implementation included in the repo earlier.)
+-- server/obfuscator.lua (cleaned)
+-- Ensure only obfuscated code is written to stdout. Diagnostics/errors go to stderr.
 
 local argparse = {}
 for i = 1, #arg do
@@ -145,10 +141,20 @@ local function transform(src)
   return preamble .. src
 end
 
+-- Main
 local ok, inp = pcall(read_file, input_path)
-if not ok then error('Failed to read input: ' .. tostring(inp)) end
+if not ok then
+  io.stderr:write('Failed to read input: ' .. tostring(inp) .. '\n')
+  os.exit(2)
+end
 local out = transform(inp)
 local w_ok, w_err = pcall(write_file, output_path, out)
-if not w_ok then error('Failed to write output: ' .. tostring(w_err)) end
+if not w_ok then
+  io.stderr:write('Failed to write output: ' .. tostring(w_err) .. '\n')
+  os.exit(3)
+end
 
-print("Obfuscation complete. Mode=" .. mode .. (mangle_local and ", mangle-local" or "") .. (encrypt_strings and ", encrypt-strings" or "") )
+-- Do not print status to stdout (it would corrupt the obfuscated output). Use stderr if needed.
+-- io.stderr:write("Obfuscation complete. Mode=" .. mode .. (mangle_local and ", mangle-local" or "") .. (encrypt_strings and ", encrypt-strings" or "") .. "\n")
+
+os.exit(0)
