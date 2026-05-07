@@ -41,7 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (j.b64result) {
         try {
           // atob returns a binary string; for UTF-8 safe usage:
-          const decoded = decodeURIComponent(escape(atob(j.b64result)))
+          const decoded = new TextDecoder('utf-8').decode(
+            Uint8Array.from(atob(j.b64result), c => c.charCodeAt(0))
+          )
           out.textContent = decoded
         } catch (e) {
           // Fallback: just show base64 string
