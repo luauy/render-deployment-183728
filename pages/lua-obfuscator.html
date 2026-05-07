@@ -18,14 +18,16 @@
   <main>
     <section>
       <h2>Usage</h2>
-      <p>The repo includes both a browser demo (client-side) and a server API for hosted obfuscation. The hosted API is intended to run in a private deployment where the obfuscator implementation is not exposed to the public.
-      </p>
+      <p>The publicly visible site provides documentation and a client demo. The obfuscator CLI and server implementation are not directly downloadable from this site to avoid casual copying. You can:</p>
+      <ol>
+        <li>Use the browser demo (client-side) to try obfuscation locally (code never leaves your browser).</li>
+        <li>Deploy the server in a private environment (see <code>server/</code> for the server skeleton) and use the Obfuscate (Server) UI with a bearer token.</li>
+        <li>Request access to the CLI/server sources via the repository owner if you need direct access.</li>
+      </ol>
 
+      <p>CLI quick reference (local usage):</p>
       <pre><code>lua lua/obfuscator.lua --input in.lua --output out.lua --mode=lua --mangle-local --encrypt-strings --encode-numbers</code></pre>
-
-      <p>To use the server API, open the <a href="../pages/obfuscate.html">Obfuscate (Server)</a> page and provide a valid bearer token. The server endpoints and deployment details are in <code>server/</code>.</p>
-
-      <p>To keep your obfuscator private, host the <code>server/</code> folder in a private repository or private deployment and do not expose the sources publicly. You can compile the obfuscation core to WASM and only deploy the WASM binary to the server for additional protection (see <code>server/wasm/README.md</code>).</p>
+      <p><em>Note:</em> The CLI file may not be linked from the site. See README for access instructions.</p>
     </section>
   </main>
 

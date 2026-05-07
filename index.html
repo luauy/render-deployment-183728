@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Render Deployment — Lua Obfuscator Demo</title>
+  <title>Render Deployment — Lua Obfuscator</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -30,14 +30,13 @@
       <ul>
         <li><a href="pages/obfuscate.html">Obfuscate (Server)</a> — web UI for server-side obfuscation (requires server deployment and token)</li>
         <li><a href="pages/lua-obfuscator.html">Documentation & options</a></li>
-        <li><a href="lua/examples/sample.lua">Example Lua file</a> (for local CLI use)</li>
-        <li><a href="projects/">Projects</a> — curated project pages and links</li>
+        <li><a href="projects/">Projects</a> — curated project pages and links</a></li>
       </ul>
     </section>
 
     <section>
       <h2>For technical users</h2>
-      <p>There is a small bash wrapper at <code>bin/obfuscate.sh</code> you can use in CI or locally. If you want hosted obfuscation, deploy the server in <code>server/</code> to a private environment and set <code>OBFUSCATE_TOKEN</code>.</p>
+      <p>There is a small bash wrapper at <code>bin/obfuscate.sh</code> you can use in CI or locally. The obfuscator sources are intentionally not linked from the public site to reduce casual downloads. To obtain the CLI or the server implementation, follow the instructions in the README (private access or deployment).</p>
     </section>
   </main>
 

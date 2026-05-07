@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /lua/
+Disallow: /server/
+Disallow: /bin/
+Disallow: /pages/wasm/
+
+# Allow other public pages
+Allow: /
