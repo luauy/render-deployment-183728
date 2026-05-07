@@ -4,43 +4,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Render Deployment — Lua Obfuscator Demo</title>
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <header>
     <h1>Render Deployment — Lua Obfuscator</h1>
     <nav>
-      <a href="/">Home</a> |
-      <a href="/lua-obfuscator.html">Lua Obfuscator</a> |
-      <a href="/README.md">README</a>
+      <a href="index.html">Home</a> |
+      <a href="pages/lua-obfuscator.html">Lua Obfuscator</a> |
+      <a href="pages/advanced.html">Luau & Advanced</a> |
+      <a href="README.md">README</a>
     </nav>
   </header>
 
   <main>
     <section>
       <h2>Overview</h2>
-      <p>This repository contains static web pages and a simple Lua obfuscator demo script. It's prepared for deployment on Render as a static site.</p>
+      <p>Welcome — this is a demo area for publishing Lua/Luau tools. The site is configured for Render static-site hosting (publish path: <code>/</code>).</p>
     </section>
 
     <section>
-      <h2>Get started</h2>
-      <ol>
-        <li>Deploy this repo as a static site on Render (publish path: <code>.</code>).</li>
-        <li>Use the Lua obfuscator script in the <code>lua/</code> folder as a starting point for advanced obfuscation.</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Files</h2>
+      <h2>Quick Links</h2>
       <ul>
-        <li><a href="/lua/obfuscator.lua">lua/obfuscator.lua</a> — simple, standalone Lua obfuscator (demonstration).</li>
-        <li><a href="/lua-obfuscator.html">Lua Obfuscator docs</a> — guidance and advanced techniques for Luau/Lua obfuscation and recommended options when adapting to Luau.</li>
+        <li><a href="lua/obfuscator.lua">lua/obfuscator.lua</a> — lightweight Prometheus-inspired obfuscator (CLI)</li>
+        <li><a href="pages/lua-obfuscator.html">Documentation & options</a></li>
+        <li><a href="lua/examples/sample.lua">Example Lua file</a></li>
       </ul>
+    </section>
+
+    <section>
+      <h2>For technical users</h2>
+      <p>There is a small bash wrapper at <code>bin/obfuscate.sh</code> you can use in CI or locally.</p>
     </section>
   </main>
 
   <footer>
-    <small>Prepared for Render static site deployment.</small>
+    <small>Based on Prometheus by Elias Oelschner — attribution present in README and site. Prepared for Render static site deployment.</small>
   </footer>
 </body>
 </html>

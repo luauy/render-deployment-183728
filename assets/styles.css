@@ -1,0 +1,15 @@
+/* assets/styles.css - minimal styling for Render demo site */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.6;
+  padding: 1rem;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+header { margin-bottom: 1rem; }
+nav a { color: #0f766e; text-decoration: none; margin-right: 0.5rem; }
+main { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(2,6,23,0.08); }
+footer { margin-top: 1rem; color: #475569; }
+code { background: #0f172a10; padding: 0.1rem 0.3rem; border-radius: 4px; }

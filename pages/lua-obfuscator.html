@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Obfuscator — Documentation</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Lua Obfuscator — Documentation</h1>
+    <nav>
+      <a href="../index.html">Home</a> |
+      <a href="lua/obfuscator.lua">Obfuscator</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Usage</h2>
+      <pre><code>lua lua/obfuscator.lua --input in.lua --output out.lua --mode=lua --mangle-local --encrypt-strings --encode-numbers</code></pre>
+      <p>Flags:</p>
+      <ul>
+        <li><code>--mode=lua|luau</code> — choose the target language (default: lua). Use <code>luau</code> for more conservative transforms.</li>
+        <li><code>--mangle-local</code> — mangle local variable names.</li>
+        <li><code>--encrypt-strings</code> — replace string literals with a small runtime decoder.</li>
+        <li><code>--encode-numbers</code> — split numeric literals into expressions.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Examples</h2>
+      <p>Obfuscate a file (Luau-safe mode):</p>
+      <pre><code>lua lua/obfuscator.lua --input lua/examples/sample.lua --output sample.obf.lua --mode=luau --mangle-local</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <small>Prometheus attribution: Based on Prometheus by Elias Oelschner — see README for details.</small>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Suggested render.yaml for Render static site setup
+# Place this file at the repo root and connect the repo on Render.
+# This is a guide; you can also configure through Render UI.
+
+services:
+  - type: static_site
+    name: render-deployment-183728
+    env: static
+    staticPublishPath: /
+    buildCommand: ""

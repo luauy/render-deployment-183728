@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luau & Advanced Notes</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Luau & Advanced</h1>
+    <nav>
+      <a href="../index.html">Home</a> |
+      <a href="lua/obfuscator.lua">Obfuscator</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Luau-specific considerations</h2>
+      <ul>
+        <li>Luau supports optional type annotations (e.g., <code>local x: number</code>). The obfuscator has a <code>--mode=luau</code> which tries to avoid mangling annotated tokens.</li>
+        <li>Roblox environments restrict some runtime features such as <code>loadstring</code>. Runtime decoders may not work on all platforms; test your target environment.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Advanced</h2>
+      <p>Porting full AST-based transforms (control-flow flattening, anti-tamper) is planned but requires thorough testing. If you want these features, I can work on a feature branch and add tests.</p>
+    </section>
+  </main>
+
+  <footer>
+    <small>Prepared for Render deployment. Use with care — obfuscation can make debugging harder.</small>
+  </footer>
+</body>
+</html>
